@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://c6qwl8u4rupel"]
+
+[ext_resource type="Script" uid="uid://dxfu35bmbqml1" path="res://Scripts/Main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://6hfxquyjv1vk" path="res://Scripts/BlockManager.gd" id="2_blockmanager"]
+[ext_resource type="Script" uid="uid://xdk7hajfh8cm" path="res://Scripts/GridOverlay.gd" id="3_gridoverlay"]
+[ext_resource type="PackedScene" uid="uid://b4lqcmjmt5l2c" path="res://Scenes/Stickman.tscn" id="4_stickman"]
+[ext_resource type="Script" uid="uid://digefkk70xfpt" path="res://Scripts/AIService.gd" id="5_aiservice"]
+[ext_resource type="PackedScene" uid="uid://chx1kphjig4fn" path="res://Scenes/Red.tscn" id="6_vy5pj"]
+[ext_resource type="PackedScene" uid="uid://bne7ulff3kvvi" path="res://Scenes/Yellow.tscn" id="7_bmxlf"]
+[ext_resource type="PackedScene" uid="uid://e2ddsycir4mi" path="res://Scenes/Green.tscn" id="8_4kpch"]
+[ext_resource type="PackedScene" uid="uid://dfimwtn7hekao" path="res://Scenes/Blue.tscn" id="9_grg3l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hud"]
+bg_color = Color(0.08, 0.08, 0.1, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 12.0
+expand_margin_top = 10.0
+expand_margin_right = 12.0
+expand_margin_bottom = 10.0
+
+[node name="Main" type="Node2D" unique_id=606320553]
+script = ExtResource("1_main")
+
+[node name="AIService" type="Node" parent="." unique_id=1867475762]
+script = ExtResource("5_aiservice")
+
+[node name="BlockManager" type="Node2D" parent="." unique_id=2038239932]
+script = ExtResource("2_blockmanager")
+
+[node name="GridOverlay" type="Node2D" parent="." unique_id=505273858]
+script = ExtResource("3_gridoverlay")
+
+[node name="WindowPlatforms" type="StaticBody2D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="TSC" parent="." unique_id=1825087552 instance=ExtResource("4_stickman")]
+position = Vector2(960, 925)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=849819284]
+
+[node name="Panel" type="PanelContainer" parent="HUD" unique_id=414462814]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 450.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hud")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/Panel" unique_id=1285691413]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TitleLabel" type="Label" parent="HUD/Panel/VBox" unique_id=1259092193]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.2, 1)
+theme_override_font_sizes/font_size = 14
+text = "★ Alan Becker Stick Figure Pet (Godot 4)"
+
+[node name="ModeLabel" type="Label" parent="HUD/Panel/VBox" unique_id=1668282728]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "РЕЖИМ: ПИТОМЕЦ (Мышь проходит сквозь окно)"
+
+[node name="AIStatusLabel" type="Label" parent="HUD/Panel/VBox" unique_id=927470595]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "ИИ: Ожидание (Нажмите T для генерации постройки)"
+
+[node name="BlocksLabel" type="Label" parent="HUD/Panel/VBox" unique_id=1920990003]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 11
+text = "Блоки: проверка папки Sprites/Blocks..."
+
+[node name="HelpLabel" type="Label" parent="HUD/Panel/VBox" unique_id=1010472704]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.75, 1, 0.8)
+theme_override_font_sizes/font_size = 11
+text = "[T] Командная стройка | [B] Ручная | [L] Слой (Перед/На/За) | [H] Свободный режим | Shift+Esc: Выход"
+
+[node name="ChaosBtn" type="Button" parent="HUD/Panel/VBox"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+theme_override_colors/font_color = Color(1, 0.75, 0.3, 1)
+theme_override_font_sizes/font_size = 11
+text = "Хаос окон: ВКЛ (X)"
+
+[node name="ExitBtn" type="Button" parent="HUD/Panel/VBox" unique_id=2081199345]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 11
+text = "✕ Закрыть питомца (или Shift+Esc)"
+
+[node name="Red" parent="." unique_id=1684575810 instance=ExtResource("6_vy5pj")]
+position = Vector2(1048, 925)
+
+[node name="Yellow" parent="." unique_id=1820136796 instance=ExtResource("7_bmxlf")]
+position = Vector2(1140, 925)
+eas_path = "res://Sprites/Characters/Red.eas"
+
+[node name="Green" parent="." unique_id=602459604 instance=ExtResource("8_4kpch")]
+position = Vector2(1219, 925)
+eas_path = "res://Sprites/Characters/Red.eas"
+
+[node name="Blue" parent="." unique_id=233004187 instance=ExtResource("9_grg3l")]
+position = Vector2(1298, 925)

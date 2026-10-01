@@ -1,0 +1,24 @@
+﻿Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org
+
+godot.windows.opt.tools.64.exe : SCRIPT ERROR: Parse Error: The variable type is being inferred from a Variant value, s
+o it will be typed as Variant. (Warning treated as error.)
+At line:1 char:1
++ & "D:\Steam\steamapps\common\Godot Engine\godot.windows.opt.tools.64. ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (SCRIPT ERROR: P...ated as error.):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   at: GDScript::reload (res://Scripts/Main.gd:233)
+SCRIPT ERROR: Parse Error: The variable type is being inferred from a Variant value, so it will be typed as Variant. (W
+arning treated as error.)
+   at: GDScript::reload (res://Scripts/Main.gd:246)
+ERROR: Failed to load script "res://Scripts/Main.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+[AIService] Gemini API ключ загружен из api_key.txt! Модель: gemini-3.5-flash
+[AIService] Активный провайдер: GOOGLE_GEMINI | Модель: gemini-3.5-flash
+[BlockManager] Папка res://Sprites/Blocks пока без текстур. Загружен каноничный набор материалов: ["stone", "wood", "brick", "glass", "void", "grass", "dirt", "gold", "leaves"]
+[Stickman] Используются готовые SpriteFrames из сцены для: TSC
+[Stickman] Используются готовые SpriteFrames из сцены для: Red
+[Stickman] Используются готовые SpriteFrames из сцены для: Yellow
+[Stickman] Используются готовые SpriteFrames из сцены для: Green
+[Stickman] Используются готовые SpriteFrames из сцены для: Blue

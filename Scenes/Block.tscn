@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://n0ecepq07b7u"]
+
+[ext_resource type="Script" uid="uid://ddggipctign14" path="res://Scripts/Block.gd" id="1_block"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_block"]
+size = Vector2(32, 32)
+
+[node name="Block" type="StaticBody2D" unique_id=748772496 groups=["blocks"]]
+script = ExtResource("1_block")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1331595494]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_block")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1202922576]
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1890642654]
+visible = false
+position = Vector2(0, -16)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=1628073684]
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
+border_color = Color(0, 0, 0, 0.4)
+border_width = 0.0
+editor_only = false
